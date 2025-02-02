@@ -1,7 +1,15 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
+import { defineConfig } from 'vite';
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
-})
+  server: {
+    host: "0.0.0.0", // Allow external access
+    port: 5173,      // Your chosen port
+    strictPort: true,
+    // Add the allowed host(s):
+    allowedHosts: [
+      "5173-markpillon-fullstackuof-069p22xtf3i.ws-us117.gitpod.io", // Your specific host
+      // OR allow all hosts (for development only):
+      "all"
+    ],
+  },
+});
