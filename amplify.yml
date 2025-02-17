@@ -3,15 +3,14 @@ frontend:
   phases:
     preBuild:
       commands:
-        - cd introdemo  # Change to the subfolder where package.json is located
         - npm install
     build:
       commands:
         - npm run build
   artifacts:
-    baseDirectory: introdemo/dist  # Adjust this path if necessary
+    baseDirectory: dist  
     files:
       - '**/*'
   cache:
     paths:
-      - introdemo/node_modules/**/*
+      - node_modules/**/*
